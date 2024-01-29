@@ -1,0 +1,98 @@
+    <!-- <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Cookie Detection</title>
+    </head>
+    <body>
+
+        <h1>Cookie Detection hello</h1>
+
+        <form id="urlForm">
+            <label for="urlInput">Enter URL:</label>
+            <input type="text" id="urlInput" name="urlInput" required>
+            <button type="button" onclick="checkCookies()">Check Cookies</button>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            function checkCookies() {
+                var url = document.getElementById("urlInput").value;
+        
+                // Make an AJAX request to the server-side script
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/check_cookies", true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+        
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        var resultDiv = document.getElementById("result");
+        
+                        if (xhr.status == 200) {
+                            resultDiv.innerHTML = xhr.responseText;
+                        } else {
+                            resultDiv.innerHTML = "Error: Unable to check cookies.";
+                        }
+                    }
+                };
+        
+                xhr.send(JSON.stringify({ url: url }));
+            }
+        </script>
+        
+
+    </body>
+    </html> -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cookie Detection</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+
+        <h1>Cookie Detection </h1>
+
+        <form id="urlForm">
+            <label for="urlInput">Enter URL:</label>
+            <input type="text" id="urlInput" name="urlInput" required>
+            <button type="button" onclick="checkCookies()">Check Cookies</button>
+        </form>
+
+        <div id="result"></div>
+
+        <script>
+            function checkCookies() {
+                var url = document.getElementById("urlInput").value;
+        
+                // Make an AJAX request to the server-side script
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/check_cookies", true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+        
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        var resultDiv = document.getElementById("result");
+        
+                        if (xhr.status == 200) {
+                            resultDiv.innerHTML = xhr.responseText;
+                        } else {
+                            resultDiv.innerHTML = "Error: Unable to check cookies.";
+                        }
+                    }
+                };
+        
+                xhr.send(JSON.stringify({ url: url }));
+            }
+        </script>
+        
+
+    </body>
+    </html>
